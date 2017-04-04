@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: quentingautier
- * Date: 22/03/2017
- * Time: 11:02
- */
 
 $host = "localhost";
 $port = "8888";
