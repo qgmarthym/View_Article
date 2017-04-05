@@ -91,7 +91,8 @@ while(!feof($fileOpen))
         && !($data['page']=="null" || $data['page']=="")
         && !($data['ip']=="null" || $data['ip']==""))
     {
-        $req = $db->prepare('CALL insert_analytic (:portal_id, :page_type, :page_id, :page, :ip, :session_id, :date, :fulldate, :referrer, :browser)');
+        $req = $db->prepare('CALL insert_analytic (:portal_group, :portal_id, :page_type, :page_id, :page, :ip, :session_id, :date, :fulldate, :referrer, :browser)');
+        $req->bindParam('portal_group', $data['portalGroup'], PDO::PARAM_STR);
         $req->bindParam('portal_id', $data['portalId'], PDO::PARAM_INT);
         $req->bindParam('page_type', $data['pageType'], PDO::PARAM_STR);
         $req->bindParam('page_id', $data['pageId'], PDO::PARAM_INT);
